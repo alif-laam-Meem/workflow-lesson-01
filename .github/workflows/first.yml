@@ -4,24 +4,23 @@ on: workflow_dispatch
 
 jobs:
 
-    job1: First Job
-    runs-on: ubuntu-latest
+    job1: 
+        name: First Job
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Step one
+              uses: actions/checkout@v4
 
-    Steps:
-        -name: Step one
-         uses: actions/checkout@v4
+            - name: Step two
+              run: env | sort
+    job2: 
+        name: Second Job
+        runs-on: windows-latest
 
-        -name: Step two
-         run: env | sort
+        steps:
+            - name: Step one
+              uses: actions/checkout@v4
 
-
-
-    job2: Second Job
-    runs-on: windows-latest
-
-    steps:
-        -name: Step one
-         uses: actions/checkout@v4
-
-        -name: Step two 
-         run: "get-ChildItem Env: | Sort-Object Name"
+            - name: Step two
+              run: "get-ChildItem Env: | Sort-Object Name"
