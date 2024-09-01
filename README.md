@@ -1,2 +1,2 @@
-# workfow-lesson-01
+# workflow-lesson-01
 This is the first Lesson on GitHub Workflows
